@@ -1,12 +1,18 @@
 #pragma once
 //
 // asynchronous header-only shared buffer logger for c++
-// prepends [time][log_level][thread_name]. Thread_name defaults to "Thread n" and increments. 
-// space padding in log ensures clean formatting with monospaced fonts
-// name_current_thread() can be called to replace numeric thread name
-//
+// PUBLIC DOMAIN
 // Author: Lightja 2/8/25
 // Known issues: log_level doesn't function and name_current_thread() is sometimes ignored.
+//
+// Example Usage: (similar to cout)
+// name_current_thread("example thread")
+// log_debug << "example value: " << value << endl;
+// log_info << "Done with example!" << endl;
+//
+// Example Output:
+// [2025-02-08 13:09:18.840][ DEBUG ][example thread  ] example value: 5
+// [2025-02-08 13:09:18.940][ INFO  ][example thread  ] Done with example!
 #include <iomanip>
 #include <iostream>
 #include <fstream>
